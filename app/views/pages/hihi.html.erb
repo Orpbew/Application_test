@@ -1,1 +1,21 @@
-<h1>123212</h1>
+<h1>Formulaire</h1>
+
+<form action="/hihé" method="get">
+  <input 
+        type="text" 
+        name="fuckers" 
+        value="<%= params[:fuckers] %>" 
+        placeholder="Whooo arh u loop king for?"
+    >
+
+  <input type="submit">
+</form>
+
+<h2>Mites pour team</h2>
+<ol>
+  <% @membrs.each do |m| %>
+    <li><%= m.capitalize %></li>
+  <% end %>
+</ol>
+
+<%= link_to "par là", ici_path%>
