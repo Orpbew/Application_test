@@ -1,1 +1,7 @@
-ici les restaus !!
+<h1>Mes Restaurants</h1>
+
+<ul>
+  <% @restaurants.each do |r| %>
+    <li><%= r.nom %></li>
+  <% end %>
+</ul>
