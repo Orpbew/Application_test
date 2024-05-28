@@ -1,12 +1,12 @@
 <h1>Mes Restaurants</h1>
 
 <ul>
-  <% @restaurants.each do |r| %>
-    <li><%=link_to r.nom, restaurant_path(r[:id])  %></li>
+  <% @restaurants.each do |restaurant| %>
+   <li><%=link_to restaurant.nom, restaurant_path(restaurant)  %></li>
   <% end %>
 </ul>
 
 <%= link_to "hihé", hihi_path%>
 <%= link_to "ici", ici_path%>
 <%= link_to "restaurants", restaurants_path%>
-<%= link_to "restaurants_new", restaurants_new_path%>
+<%= link_to "restaurants_new", new_restaurant_path%>

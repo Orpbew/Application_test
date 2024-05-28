@@ -2,7 +2,12 @@
 <p>Son Adresse : <%= @restaurant.adresse %></p>
 <p>Sa note : <%= @restaurant.note %>/5</p>
 
+<%= link_to "Delete",
+  restaurant_path(@restaurant),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+
 <%= link_to "hihé", hihi_path%>
 <%= link_to "ici", ici_path%>
 <%= link_to "restaurants", restaurants_path%>
-<%= link_to "restaurants_new", restaurants_new_path%>
+<%= link_to "restaurants_new", new_restaurant_path%>

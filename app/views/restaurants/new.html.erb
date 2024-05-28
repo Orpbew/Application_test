@@ -1,16 +1,8 @@
-<%= form_with model: @restaurant do |f| %>
-  <%= f.label :nom %>
-  <%= f.text_field :nom %>
-  <%= f.label :adresse %>
-  <%= f.text_field :adresse %>
-  <%= f.label :note %>
-  <%= f.number_field :note %>
-  <%= f.submit %>
-<% end %>
+<%= render "form", restaurant: @restaurant %>
 
 
 
 <%= link_to "hihé", hihi_path%>
 <%= link_to "ici", ici_path%>
 <%= link_to "restaurants", restaurants_path%>
-<%= link_to "restaurants_new", restaurants_new_path%>
+<%= link_to "restaurants_new", new_restaurant_path%>
