@@ -1,3 +1,5 @@
+<h1>Formulaire avec form_for</h1>
+
 <%= form_with model: restaurant do |f| %>
   <%= f.label :nom %>
   <%= f.text_field :nom %>
@@ -5,5 +7,14 @@
   <%= f.text_field :adresse %>
   <%= f.label :note %>
   <%= f.number_field :note %>
+  <%= f.submit %>
+<% end %>
+
+<h1>Formulaire avec simple_form_for</h1>
+
+<%= simple_form_for(restaurant) do |f| %>
+  <%= f.input :nom %>
+  <%= f.input :adresse %>
+  <%= f.input :note %>
   <%= f.submit %>
 <% end %>
