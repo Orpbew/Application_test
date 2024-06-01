@@ -64,4 +64,4 @@ end
 
   ###################### Ajout de moi
   gem "simple_form"
-
+  gem 'friendly_id', '~> 5.1' # ne semble pas fonctionner...

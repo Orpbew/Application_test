@@ -1,6 +1,13 @@
 class RestaurantsController < ApplicationController
-    before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
-   
+    #before_action :set_restaurant, only: [:show, :edit, :update, :destroy] 
+    
+    before_action :set_restaurant, only: %i[show edit update destroy] # => fait la même chose que la ligne 2
+    
+    def top
+        #@restaurants = Restaurant.where(note: [4,5])   # ici on choisi les notes de façon exclusives, 'égale à 4 ou à 5'
+        @restaurants = Restaurant.where("note > 2")     # ici on crée une condition 'supérieure à 2'
+    end
+    
     def index
         @restaurants = Restaurant.all
     end
@@ -15,7 +22,7 @@ class RestaurantsController < ApplicationController
     def create
         @restaurant = Restaurant.new(restaurant_params)
         @restaurant.save
-        redirect_to restaurant_path(@restaurant)
+        redirect_to restaurant_path(@restaurant), notice: "Restaurant was successfully created."
     end
       
     def edit
